@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class StudentResponseModel {
 	
+	//@@ used as a response model to end users
 	private long studentId;
 	private String s_name;
 	private String course;
