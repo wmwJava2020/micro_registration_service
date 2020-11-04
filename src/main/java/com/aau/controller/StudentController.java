@@ -27,8 +27,7 @@ public class StudentController {
 	
 	@PostMapping(value="/create/data")
 	public ResponseEntity<StudentResponseModel> createStudentDetails(@RequestBody StudentRequestModel studentRequestModel){
-		
-		
+				
 		ModelMapper mapper = new ModelMapper();
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
@@ -37,26 +36,12 @@ public class StudentController {
 		StudentDto dto = studentService.createStudentDetails(studentDto);
 		
 		StudentResponseModel  responseModel = mapper.map(dto, StudentResponseModel.class);
-		
-		
-		return ResponseEntity.status(HttpStatus.CREATED).body(responseModel);
-		
-		
+				
+		return ResponseEntity.status(HttpStatus.CREATED).body(responseModel);	
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@GetMapping("/main/campus/{studentId}")
 	public StudentEntity getStudentDetails(@PathVariable Long studentId) {
